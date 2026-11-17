@@ -12,7 +12,11 @@
         "187"
       ],
       "daysofweek": [
-        "Tuesday"
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
       ]
     }
   ]
