@@ -167,7 +167,7 @@ if __name__ == "__main__":
         help="use --action to enable in github action",
     )
     args = parser.parse_args()
-    func_dict = {"reserve": main, "debug": debug, "room": get_roomid}
+    func_dict = {"reserve": main, "debug": main, "room": get_roomid}  # debug 也用循环抢座模式
     with open(args.user, "r+") as data:
         usersdata = json.load(data)["reserve"]
     func_dict[args.method](usersdata, args.action)
