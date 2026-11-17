@@ -24,7 +24,7 @@ get_current_dayofweek = lambda action: (
 
 
 SLEEPTIME = 0.2  # 每次抢座的间隔
-ENDTIME = "07:10:00"  # 根据学校的预约座位时间+1min即可
+ENDTIME = "20:40:00"  # 根据学校的预约座位时间+1min即可
 
 ENABLE_SLIDER = False  # 是否有滑块验证
 MAX_ATTEMPT = 5  # 最大尝试次数
@@ -167,7 +167,7 @@ if __name__ == "__main__":
         help="use --action to enable in github action",
     )
     args = parser.parse_args()
-    func_dict = {"reserve": main, "debug": debug, "room": get_roomid}
+    func_dict = {"reserve": main, "debug": main, "room": get_roomid}
     with open(args.user, "r+") as data:
         usersdata = json.load(data)["reserve"]
     func_dict[args.method](usersdata, args.action)
