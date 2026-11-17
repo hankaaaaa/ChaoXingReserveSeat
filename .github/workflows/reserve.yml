@@ -2,7 +2,8 @@ name: auto_Reserve
 
 on:
   schedule:
-    - cron: "40 21 * * 0,1,2,3,4"
+    - cron: "38 21 * * 0,1,2,3,4"
+    - cron: "50 21 * * 0,1,2,3,4"
   workflow_dispatch:
 
 jobs:
