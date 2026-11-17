@@ -261,13 +261,12 @@ class reserve:
         self, url, times, token, roomid, seatid, captcha="", action=False, value=""
     ):
         delta_day = 1 if self.reserve_next_day else 0
-        day = datetime.date.today() + datetime.timedelta(
-            days=0 + delta_day
-        )  # 预约今天，修改days=1表示预约明天
         if action:
-            day = datetime.date.today() + datetime.timedelta(
-                days=1 + delta_day
-            )  # 由于action时区问题导致其早+8区一天
+            # GitHub 系统时区为 UTC, 统一换算为北京时间的日期(凌晨/晚上均正确)
+            bj_now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8)))
+            day = bj_now.date() + datetime.timedelta(days=delta_day)
+        else:
+            day = datetime.date.today() + datetime.timedelta(days=0 + delta_day)
         parm = {
             "roomId": roomid,
             "startTime": times[0],
