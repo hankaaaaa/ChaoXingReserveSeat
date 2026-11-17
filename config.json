@@ -4,14 +4,16 @@
       "username": "placeholder",
       "password": "placeholder",
       "time": [
-        "08:00",
+        "20:30",
         "22:00"
       ],
-      "roomid": "5003",
+      "roomid": "4990",
       "seatid": [
-        "001"
+        "187"
       ],
-      "daysofweek": []
+      "daysofweek": [
+        "Tuesday"
+      ]
     }
   ]
 }
